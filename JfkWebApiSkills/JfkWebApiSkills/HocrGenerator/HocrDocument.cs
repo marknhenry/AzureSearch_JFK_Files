@@ -68,7 +68,8 @@ namespace Microsoft.CognitiveSearch.Skills.Hocr
             {
                 metadata.WriteLine($"<span class='ocr_line' id='line_{pageNumber}_{li}' title='baseline -0.002 -5; x_size 30; x_descenders 6; x_ascenders 6'>");
                 
-                foreach (NormalizedWord word in words)
+                // marked by mark
+                foreach (NormalizedWord word in words.Reverse())
                 {
                     string annotation = "";
                     if (wordAnnotations != null && wordAnnotations.TryGetValue(word.Text, out string wordAnnotation))
